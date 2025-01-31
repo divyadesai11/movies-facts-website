@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Facts</h1>
+        <p id="factDisplay">Click the button to get a movie fact!</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const movieFacts = [
+            "The first movie ever made was called \"Roundhay Garden Scene\" and it was filmed in 1888. It is only 2.11 seconds long.",
+            "The highest-grossing film of all time is \"Avatar\" (2009), directed by James Cameron, with a global box office gross of over $2.9 billion.",
+            "Alfred Hitchcock was known as the \"Master of Suspense\" for his use of techniques such as the \"MacGuffin\" and subjective camera angles to create tension.",
+            "The Academy Awards, also known as the Oscars, were first held in 1929.",
+            "Walt Disney holds the record for the most Academy Awards won by an individual, with 26 wins (including 4 honorary awards).",
+            "The most expensive movie ever made was \"Pirates of the Caribbean: On Stranger Tides\" (2011), with a total production cost of $379 million.",
+            "The sound of a T-Rex roar in \"Jurassic Park\" is a combination of sounds from a baby elephant, a tiger, and an alligator.",
+            "\"The Wizard of Oz\" (1939) was not a box office success in its original theatrical run, it became a cultural phenomenon after repeat viewings on television.",
+            "The film \"Citizen Kane\" (1941) is widely regarded as one of the greatest movies of all time, it was directed by Orson Welles when he was only 25 years old.",
+            "The average movie is about 120 minutes (2 hours) long."
+        ];
+
+
+        const factDisplay = document.getElementById('factDisplay');
+        const factButton = document.getElementById('factButton');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * movieFacts.length);
+            factDisplay.textContent = movieFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
